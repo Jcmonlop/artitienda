@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+<h1 th:text"${tituloH1}"></h1>
+<table>
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>TIPO</td>
+			<td>MARCA</td>
+			<td>MODELO</td>
+			<td>CANTIDAD</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="articulo : ${articulos}">
+			<td th:text="${articulo.id}"></td>
+			<td th:text="${articulo.tipo}"></td>
+			<td th:text="${articulo.marca}"></td>
+			<td th:text="${articulo.modelo}"></td>
+			<td th:text="${articulo.cantidadArticulos}"></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

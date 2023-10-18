@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+	<p th:if="${articulo==null}" th:text="'No hay artículo con el ID ' + ${idPedido} + ' indicado'"></p>
+<ul th:if="${articulo!=null}">
+	<li th:text="'Id: ' + ${articulo.id}"></li>
+	<li th:text="'Tipo: ' + ${articulo.tipo}"></li>
+	<li th:text="'Marca: ' + ${articulo.marca}"></li>
+	<li th:text="'Modelo: ' + ${articulo.modelo}"></li>
+	<li th:text="'Cantidad de artículos: ' + ${articulo.cantidadArticulos}"></li>
+</ul>
+</body>
+</html>
