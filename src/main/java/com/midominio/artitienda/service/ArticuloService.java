@@ -22,7 +22,7 @@ public class ArticuloService {
 		return articuloRepository.existsById(id);
 	}
 	
-	public Iterable<Articulo> findAll() {
+	public Iterable<Articulo> todosLosArticulos() {
 		return articuloRepository.findAll();
 	}
 	
@@ -32,6 +32,10 @@ public class ArticuloService {
 	
 	public Optional<Articulo> findById(Long id) {
 		return articuloRepository.findById(id);
+	}
+	
+	public Articulo save(Articulo articulo) {
+		return articuloRepository.save(articulo);
 	}
 	
 	public void deleteById(Long id) {

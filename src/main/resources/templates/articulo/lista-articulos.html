@@ -20,8 +20,9 @@
 	</style>
 </head>
 <body>
-<h1 th:text"${tituloH1}"></h1>
-<p th:text="'Total articulos: ' + ${cantidad}"></p>
+<h1 th:text="${tituloH1}"></h1>
+<a th:href="@{/articulo/form-a}" style="text-decoration: none;">Añadir artículo</a>
+<p th:text="'Total de artículos: ' + ${cantidad}"></p>
 <table>
 	<thead>
 		<tr>
@@ -30,7 +31,7 @@
 			<td>MARCA</td>
 			<td>MODELO</td>
 			<td>CANTIDAD</td>
-			<td>ACCION</td>
+			<td>ACCIONES</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -40,7 +41,10 @@
 			<td th:text="${articulo.marca}"></td>
 			<td th:text="${articulo.modelo}"></td>
 			<td th:text="${articulo.cantidadArticulos}"></td>
-			<td><a th:href="@{/articulo/borrar/} + ${articulo.id}">BORRAR</a></td>
+			<td>
+				<a th:href="@{/articulo/borrar/} + ${articulo.id}" style="text-decoration: none;color: red;">BORRAR</a>
+				<a th:href="@{/articulo/form-a/} + ${articulo.id}" style="text-decoration: none;">EDITAR</a>
+			</td>
 		</tr>
 	</tbody>
 </table>

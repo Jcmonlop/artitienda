@@ -68,7 +68,7 @@ public class TestController {
 	public String test5(Model model) {
 		model.addAttribute("titulo", "Listado");
 		model.addAttribute("tituloH1", "Lista de artículos");
-		model.addAttribute("articulos", articuloService.findAll());
+		model.addAttribute("articulos", articuloService.todosLosArticulos());
 		return "test/lista-articulos";
 	}
 	
@@ -76,7 +76,7 @@ public class TestController {
 	public String test6(@RequestParam Long id , Model model) {
 		model.addAttribute("titulo", "Borrar artículo");
 		articuloService.deleteById(id);
-		model.addAttribute("articulos", articuloService.findAll());
+		model.addAttribute("articulos", articuloService.todosLosArticulos());
 		return "test/lista-articulos";
 	}
 	

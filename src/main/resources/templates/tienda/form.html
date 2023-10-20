@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${titulo}"></title>
+</head>
+<body>
+<h1 th:text="${tituloH1}"></h1>
+<form th:action="@{/tienda/form}" th:object="${tienda}" method="post">
+	Nombre
+	<input type="text" th:field="*{nombre}">
+	<br>
+	Tipo
+	<input type="text" th:field="*{tipo}">
+	<br>
+	Calle
+	<input type="text" th:field="*{calle}">
+	<br>
+	Número
+	<input type="text" th:field="*{numero}">
+	<br>
+	E-mail
+	<input type="email" th:field="*{email}">
+	<br>
+	<br>
+	
+	<input type="submit" value="Guardar">
+	
+	<input type="hidden" th:field="*{id}">
+	
+	
+</form>
+</body>
+</html>

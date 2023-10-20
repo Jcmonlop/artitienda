@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${titulo}"></title>
+	<style>
+		table {
+			border-collapse: collapse;
+			margin: 0 auto;
+			/* Margen automático para centrar horizontalmente */
+
+		}
+
+		td,
+		th {
+			border: 1px solid darkgray;
+			padding: 8px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 th:text="${tituloH1}"></h1>
+
+	<a th:href="@{/tienda/form}" style="text-decoration: none;">Crear Tienda</a>
+
+	<p th:text="'Total de tiendas: ' + ${cantidad}"></p>
+	<table>
+		<thead>
+			<tr>
+				<td>ID</td>
+				<td>NOMBRE</td>
+				<td>TIPO</td>
+				<td>CALLE</td>
+				<td>NUMERO</td>
+				<td>EMAIL</td>
+				<td>ACCIONES</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="tienda : ${tiendas}">
+				<td th:text="${tienda.id}"></td>
+				<td th:text="${tienda.nombre}"></td>
+				<td th:text="${tienda.tipo}"></td>
+				<td th:text="${tienda.calle}"></td>
+				<td th:text="${tienda.numero}"></td>
+				<td th:text="${tienda.email}"></td>
+				<td>
+					<a th:href="@{/tienda/borrar/} + ${tienda.id}" style="color: red; text-decoration: none;">BORRAR</a>
+					<a th:href="@{/tienda/form/} + ${tienda.id}" style="text-decoration: none;">EDITAR</a>				
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
